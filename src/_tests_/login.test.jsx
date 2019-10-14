@@ -1,4 +1,5 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import ReactDOM from 'react-dom'
 import Login from '../components/login'
 
@@ -20,4 +21,9 @@ test('calls onSubmit with the username and password when submitted', () => {
     username: username.value,
     password: password.value,
   })
+})
+
+test('creates a snapshot and matches snapshot on subsequent calls', () => {
+  const { container } = render(<Login onSubmit={() => {}} />)
+  expect(container.firstChild).toMatchSnapshot()
 })

@@ -39,7 +39,8 @@
     "flow-bin": "^0.109.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.10.2"
   },
   "husky": {
     "hooks": {

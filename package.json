@@ -16,7 +16,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|scss|md)\"",
-    "validate": "npm run lint && npm run prettier -- --write && npm run flow"
+    "validate": "npm run lint && npm run prettier -- --write && npm run flow",
+    "precommit": "npm run validate"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +38,7 @@
     "@testing-library/jest-dom": "^4.1.2",
     "eslint-config-prettier": "^6.4.0",
     "flow-bin": "^0.109.0",
+    "husky": "^3.0.9",
     "prettier": "^1.18.2"
   }
 }

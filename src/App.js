@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Login from './components/login'
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
   const handleOnSubmit = params => {
     const { username, password } = params
     console.log(`password entered: ${password}`)
+    setLoggedIn(true)
     return alert(`You logged in, ${username}`)
   }
   return (
@@ -24,7 +26,11 @@ function App() {
         >
           Learn React
         </a>
-        <Login onSubmit={handleOnSubmit} />
+        {loggedIn ? (
+          <div>You're logged in!</div>
+        ) : (
+          <Login onSubmit={handleOnSubmit} />
+        )}
       </header>
     </div>
   )

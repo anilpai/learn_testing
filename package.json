@@ -13,10 +13,13 @@
     "flow": "flow",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watch",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|scss|md)\"",
-    "validate": "npm run lint && npm run prettier -- --write && npm run flow"
+    "validate": "npm run lint && npm run prettier -- --write && npm run flow",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:run:chrome": "./node_modules/.bin/cypress run --browser chrome",
+    "cypress:open": "./node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,8 +37,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^5.0.2",
     "@testing-library/jest-dom": "^4.1.2",
+    "cypress": "^3.4.1",
     "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-cypress": "^2.7.0",
     "flow-bin": "^0.109.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",

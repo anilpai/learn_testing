@@ -1,10 +1,6 @@
-import { userInfo } from "os";
-
 describe("user clicks submit", () => {
   it("logs in user", () => {
-    const user = cy;
-    user
-      .visit("http://localhost:3000/")
+    cy.visit("/")
       .get('[type="submit"]')
       .click()
       .get(".App-header > div")
